@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 This is an example of a mobile automation that uses Serenity as a framework, Appium and Java programming.
 
 # Getting Started
