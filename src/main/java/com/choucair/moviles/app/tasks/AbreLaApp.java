@@ -6,20 +6,17 @@ import net.serenitybdd.screenplay.Tasks;
 import net.thucydides.core.annotations.Step;
 import java.util.logging.Logger;
 
-import com.choucair.moviles.app.interactions.choucair.TakeScreenshot;
-
 public class AbreLaApp implements Task {
 
     public AbreLaApp(){}
 
-    public static AbreLaApp carulla(){
+    public static AbreLaApp swagLabs(){
         return Tasks.instrumented(AbreLaApp.class);
     }
 
     @Override
-    @Step("App Carulla abierta")
+    @Step("App SwagLabs")
     public <T extends Actor> void performAs(T actor) {
-        Logger.getAnonymousLogger().info("Se abre app Carulla");     // Paso en el que vamos
-        actor.attemptsTo(TakeScreenshot.asEvidence());
+        Logger.getAnonymousLogger().info("Se abre app SwagLabs");
     }
 }
