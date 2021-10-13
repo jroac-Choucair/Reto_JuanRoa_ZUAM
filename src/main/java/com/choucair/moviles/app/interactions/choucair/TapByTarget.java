@@ -6,6 +6,7 @@ import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.Step;
 
@@ -15,6 +16,10 @@ public class TapByTarget implements Interaction{
 	
 	public TapByTarget(Target target) {
 		this.target = target;
+	}
+
+	public static TapByTarget target(Target target){
+		return Tasks.instrumented(TapByTarget.class, target);
 	}
 
 	@Override

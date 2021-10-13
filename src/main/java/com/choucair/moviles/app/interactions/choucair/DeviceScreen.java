@@ -1,8 +1,7 @@
 package com.choucair.moviles.app.interactions.choucair;
 
-import org.openqa.selenium.Dimension;
-
 import net.serenitybdd.screenplay.Actor;
+import org.openqa.selenium.Dimension;
 
 public class DeviceScreen {
 
