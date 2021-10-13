@@ -1,5 +1,6 @@
 package com.choucair.moviles.app.stepsdefinitios;
 
+import com.choucair.moviles.app.exceptions.CompraException;
 import com.choucair.moviles.app.models.Usuario;
 import com.choucair.moviles.app.questions.QuestionCompraExitosa;
 import com.choucair.moviles.app.tasks.AbreLaApp;
@@ -33,6 +34,7 @@ public class CompraStepsDefinition {
 
     @Then("^debe ver el (.*) en la pantalla al terminar el checkout: resumen$")
     public void validaMensaje(String mensaje){
-        theActorInTheSpotlight().should(seeThat(QuestionCompraExitosa.mensajeExitoso(),equalTo(mensaje)));
+        theActorInTheSpotlight().should(seeThat(QuestionCompraExitosa.mensajeExitoso(),equalTo(mensaje))
+                .orComplainWith(CompraException.class, CompraException.ErrorCompra()));
     }
 }
