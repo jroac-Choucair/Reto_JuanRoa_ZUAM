@@ -6,10 +6,10 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
-        features = {"src/test/java/Feature"},
-        tags ="@RutaLogin",
-        glue = "com.choucair.moviles.app.stepsdefinitios",
-        snippets = SnippetType.CAMELCASE
+        features = {"src/test/java/features/CompraExitosa.feature"}
+        ,tags = "@RutaCompra"
+        ,glue = {"com.choucair.moviles.app.stepsdefinitios"}
+        ,snippets = SnippetType.CAMELCASE
 )
 @RunWith(CucumberWithSerenity.class)
 public class RunnerCucumber {
