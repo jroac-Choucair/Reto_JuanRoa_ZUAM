@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
 import static com.choucair.moviles.app.ui.CompraUI.LBL_CONFIRMACION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
