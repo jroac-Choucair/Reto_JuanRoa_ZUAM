@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         features = {"src/test/java/features/CompraExitosa.feature"}
-        ,tags = "@RutaCompra"
+        ,tags = "@RutaCompraExitosa"
         ,glue = {"com.choucair.moviles.app.stepsdefinitios"}
         ,snippets = SnippetType.CAMELCASE
 )
