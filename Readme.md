@@ -1,29 +1,29 @@
-# Introduction 
-Este es un ejemplo de una automatización móvil que utiliza Serenity como framework, Appium y programación en Java.
+#Introduction
+This is an example of a mobile automation that uses Serenity as a framework, Appium and Java programming.
 
 # Getting Started
-La aplicación que nesecitas para instalar está en: https://github.com/saucelabs/sample-app-mobile/releases
+The application you need to install is at: https://github.com/saucelabs/sample-app-mobile/releases
 
-Recordar cambiar las capabilities de su dispositivo móvil en serenity.properties
+Remember to change the capabilities of your mobile device in serenity.properties
 
 # Build and Test
-Para ejecutar el proyecto completo utilizar el comando:  
-```
- gradle test   
-```  
-Para ejecutar un runner específico : 
+To run the complete project use the command:
+`` ''
+  gradle test
+`` ''
+To run a specific runner:
  
-```  gradle clean test -Dtest.single=MiRunner  ```   
-```  gradle clean test -Prunner=MiRunner  ``` 
-Para ejecutar diferentes runners separándolos por comas:
+`` `` gradle clean test -Dtest.single = MyRunner `` ''
+`` `` gradle clean test -Prunner = MyRunner `` ''
+To run different runners separating them by commas:
 
-```  gradle clean test -Prunner=PrimerRunner,SegundoRunner  ```
+`` `` gradle clean test -Prunner = PrimerRunner, SegundoRunner `` ''
 
-Para Generar la evidencia de pruebas: 
+To Generate the test evidence:
  
-```  gradle aggregate  ```  
+gradle aggregate
 
-Aunque el proyecto por si solo genera la evidencia automaticamente una vez finalice la ejecución.
+Although the project by itself generates the evidence automatically once the execution is finished.
 
-# Ejemplo comandos de ejecución: 
-```   gradle clean test -Dtest.single=LoginRunner aggregate  ```
+# Execution commands example:
+`` `` gradle clean test -Dtest.single = LoginRunner aggregate `` ''
