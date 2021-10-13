@@ -13,18 +13,11 @@ import static com.choucair.moviles.app.ui.CompraUI.BTN_CONTINUAR;
 
 public class CargarInformacionYCheckout implements Interaction {
 
-    Usuario usuario;
-
-    public CargarInformacionYCheckout(Usuario usuario){ this.usuario = usuario; }
-
     public static CargarInformacionYCheckout exitoso(){return Tasks.instrumented(CargarInformacionYCheckout.class);}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(usuario.getNombre()).into(TXT_NOMBRE),
-                Enter.theValue(usuario.getApellido()).into(TXT_APELLIDO),
-                Enter.theValue(usuario.getCodpostal()).into(TXT_CODIGO_POSTAL),
                 TakeScreenshot.asEvidence(),
                 Click.on(BTN_CONTINUAR)
         );

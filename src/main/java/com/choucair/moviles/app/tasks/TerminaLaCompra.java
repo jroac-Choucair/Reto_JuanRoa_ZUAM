@@ -8,6 +8,9 @@ import com.choucair.moviles.app.models.Usuario;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Enter;
+
+import static com.choucair.moviles.app.ui.CompraUI.*;
 
 public class TerminaLaCompra implements Task {
 
@@ -21,6 +24,9 @@ public class TerminaLaCompra implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 IrAlCarritoYCheckout.exitoso(),
+                Enter.theValue(usuario.getNombre()).into(TXT_NOMBRE),
+                Enter.theValue(usuario.getApellido()).into(TXT_APELLIDO),
+                Enter.theValue(usuario.getCodpostal()).into(TXT_CODIGO_POSTAL),
                 CargarInformacionYCheckout.exitoso(),
                 IrAlResumenYTerminar.compra()
         );
