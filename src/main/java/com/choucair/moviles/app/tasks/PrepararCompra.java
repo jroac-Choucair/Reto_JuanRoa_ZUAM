@@ -13,8 +13,10 @@ import static com.choucair.moviles.app.ui.HomeUI.BTN_LISTAR;
 public class PrepararCompra implements Task {
 
     Usuario usuario;
+
     public PrepararCompra(Usuario usuario) {this.usuario = usuario;}
-    public static PrepararCompra exitosamente(Usuario usuario){ return Tasks.instrumented(PrepararCompra.class, usuario);}
+
+    public static PrepararCompra deFormaExitosa(Usuario usuario){ return Tasks.instrumented(PrepararCompra.class, usuario);}
 
     @Override
     public <T extends Actor> void performAs(T actor) {

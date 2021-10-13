@@ -14,23 +14,20 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 
 public class RealizarLogin implements Task{
 
-        Usuario usuario;
-        public RealizarLogin(Usuario usuario) {this.usuario = usuario;}
-        public static RealizarLogin exitoso(Usuario credenciales){return Tasks.instrumented(RealizarLogin.class,credenciales);}
+    Usuario usuario;
 
+    public RealizarLogin(Usuario usuario) {this.usuario = usuario;}
+
+    public static RealizarLogin exitoso(Usuario credenciales){return Tasks.instrumented(RealizarLogin.class,credenciales);}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(TXT_USUARIO, isPresent()).forNoMoreThan(5).seconds(),
                 Enter.theValue(usuario.getUsuario()).into(TXT_USUARIO),
-                TakeScreenshot.asEvidence(),
                 Enter.theValue(usuario.getContrasena()).into(TXT_CONTRASENA),
-                TakeScreenshot.asEvidence(),
                 Click.on(BTN_LOGIN),
                 TakeScreenshot.asEvidence()
-
         );
     }
 }
-

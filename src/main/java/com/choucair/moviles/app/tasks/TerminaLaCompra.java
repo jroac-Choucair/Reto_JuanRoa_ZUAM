@@ -17,8 +17,8 @@ public class TerminaLaCompra implements Task {
     Usuario usuario;
 
     public TerminaLaCompra(Usuario usuario) { this.usuario = usuario;}
-    public static TerminaLaCompra exitosamente(Usuario datosUsuario){ return Tasks.instrumented(TerminaLaCompra.class,datosUsuario); }
 
+    public static TerminaLaCompra exitosamente(Usuario datosUsuario){ return Tasks.instrumented(TerminaLaCompra.class,datosUsuario); }
 
     @Override
     public <T extends Actor> void performAs(T actor) {

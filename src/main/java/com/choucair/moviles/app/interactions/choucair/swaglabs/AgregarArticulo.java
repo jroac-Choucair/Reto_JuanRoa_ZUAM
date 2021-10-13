@@ -15,6 +15,7 @@ public class AgregarArticulo implements Interaction {
     public AgregarArticulo(String nombreArticulo){
         this.nombreArticulo = nombreArticulo;
     }
+
     public static AgregarArticulo visible(String nombreArticulo){
         return Tasks.instrumented(AgregarArticulo.class, nombreArticulo);
     }
@@ -22,7 +23,6 @@ public class AgregarArticulo implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-            //WaitUntil.the(LBL_NOMBRE_PRODUCTO, isPresent()).forNoMoreThan(5).seconds(),
             Scroll.untilTargetPosition(LBL_NOMBRE_PRODUCTO.of(nombreArticulo)),
             Click.on(LBL_NOMBRE_PRODUCTO.of(nombreArticulo)),
             Scroll.untilVisibleTarget(BTN_AGREGAR_AL_CARRITO),
@@ -30,4 +30,3 @@ public class AgregarArticulo implements Interaction {
         );
     }
 }
-

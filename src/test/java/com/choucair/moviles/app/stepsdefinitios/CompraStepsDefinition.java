@@ -10,7 +10,6 @@ import com.choucair.moviles.app.tasks.TerminaLaCompra;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 import java.util.List;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -27,12 +26,12 @@ public class CompraStepsDefinition {
     public void ingresaCorreectamenteYCompraUnProducto(List<Usuario> usuario){
         theActorInTheSpotlight().attemptsTo(
                 RealizarLogin.exitoso(usuario.get(0)),
-                PrepararCompra.exitosamente(usuario.get(0)),
+                PrepararCompra.deFormaExitosa(usuario.get(0)),
                 TerminaLaCompra.exitosamente(usuario.get(0))
         );
     }
 
-    @Then("^debe ver el (.*) en la pantalla al terminar el checkout: resumen$")
+    @Then("^debe ver el (.*) en la pantalla resumen$")
     public void validaMensaje(String mensaje){
         theActorInTheSpotlight().should(seeThat(QuestionCompraExitosa.mensajeExitoso(),equalTo(mensaje))
                 .orComplainWith(CompraException.class, CompraException.ErrorCompra()));
