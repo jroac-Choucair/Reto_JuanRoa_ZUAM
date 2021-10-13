@@ -20,7 +20,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class CompraStepsDefinition {
 
     @Given("^que (.*) ingresa a la App SwagLabs para comprar un producto$")
-    public void ingresarLoginSwagLabs(String actor) {theActorCalled(actor).wasAbleTo(AbreLaApp.swagLabs());}
+    public void abreLaAppSwagLabs(String actor) {theActorCalled(actor).wasAbleTo(AbreLaApp.swagLabs());}
 
     @When("^seleciona el articulo para continuar el proceso de compra$")
     public void ingresaCorreectamenteYCompraUnProducto(List<Usuario> usuario){
