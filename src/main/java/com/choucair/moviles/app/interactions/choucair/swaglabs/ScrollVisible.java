@@ -26,7 +26,7 @@ public class ScrollVisible implements Interaction {
         int xPosition = dimension.width / 2;
         int initialPositionY = dimension.height / 2;
         int finalPositionY = dimension.height / 4;
-        //noinspection rawtypes
+
         TouchAction action = new TouchAction((AppiumDriver) driver);
         while (!target.resolveFor(actor).isVisible()) {
             action.longPress(PointOption.point(xPosition, initialPositionY));
